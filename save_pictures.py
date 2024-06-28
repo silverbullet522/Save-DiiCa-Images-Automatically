@@ -51,18 +51,20 @@ def save_description(path, description):
     except Exception as e:
         print(f"保存描述文件失败：{e}")
 def main(data):
-    # JSON数据中的图片保存路径字段是`description`字段
-    path = data['data']['collection']['title'].strip()
+
+    # collection标题
+    collection_title = data['data']['collection']['title'].strip()
+    # 艺人名称
+    artist = data['data']['collection']['artist']["displayName"].strip()
 
     # 保存描述文件
     description = data['data']['collection']['description']
-    save_description(path, description)
+    save_description(f"images/{artist}/{collection_title}", description)
 
     # 保存封面图片
     cover_uri = data['data']['collection']['thumbnail']['uri']
-    save_image(path, cover_uri, "cover")
+    save_image(f"images/{artist}/{collection_title}", cover_uri, "cover")
 
-    # 遍历集合中的每一项
     for item in data['data']['collection']['collectionItems']['edges']:
         if item is not None:
             node = item['node']
@@ -71,7 +73,7 @@ def main(data):
             # 获取标题
             title = node['item']['title']
             # 保存图片
-            save_image(path, image_uri, title)
+            save_image(f"images/{artist}/{collection_title}", image_uri, title)
 
 def process_json_files(directory_path):
     for filename in os.listdir(directory_path):
