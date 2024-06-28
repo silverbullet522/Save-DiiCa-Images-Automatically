@@ -12,13 +12,13 @@ mitm默认端口是8080，配置安卓端口时使用mitm的端口就好，clash
 
 **1**.有些安卓模拟器（比如雷电）在设置代理后，并不能生效（体现在访问mimt.it时提示没有透过代理）
 
-**解决办法**：https://blog.csdn.net/kxltsuperr/article/details/133412233，
+**解决办法**：https://blog.csdn.net/kxltsuperr/article/details/133412233
 
 这个地方看到设置完代理就行，安装证书的过程看下面。
 
 **2**.安卓7以后安卓app就不再支持用户证书了，所以通过PC代理后，手机只有浏览器有网，而app都没有网。所以需要把证书安装为系统证书。
 
-**解决办法**：https://cloud.tencent.com/developer/article/2186752，
+**解决办法**：https://cloud.tencent.com/developer/article/2186752
 
 上传证书时碰到的其他问题可以百度相应的报错信息，应该很好解决。
 
