@@ -34,4 +34,4 @@ mitm默认端口是8080，配置安卓端口时使用mitm的端口就好，clash
 
 5. 再运行step2.bat，或者直接在目录下打开 cmd 运行`python save_pictures.py`，等待自动下载。结束后如果图片有缺漏可以再次执行依次step2，会跳过已保存的图片。
 
-   
+   没装python的话，第二步可以直接运行save_pictures.exe可执行文件。
